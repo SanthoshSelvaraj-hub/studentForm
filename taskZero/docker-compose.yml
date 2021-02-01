@@ -1,0 +1,26 @@
+version: '3.0' # specify docker-compose version
+ 
+# Define the services/ containers to be run
+services:
+ angular: # name of the first service
+  build: taskZero # specify the directory of the Dockerfile
+  ports:
+  - "4200:4200" # specify port mapping
+ 
+ express: # name of the second service
+  build: backend # specify the directory of the Dockerfile
+  ports:
+  - "3000:3000" #specify ports mapping
+  links:
+  - database # link this service to the database service
+ 
+ database: # name of the third service
+  image: mysql # specify image to build container from
+  environment: 
+    MYSQL_ROOT_PASSWORD: KA01hh8469
+    MYSQL_DATABASE: innodb
+    MYSQL_USER: admin
+    MYSQL_HOST: taskzerodb.cm23ylawjbiy.us-east-1.rds.amazonaws.com
+
+  ports:
+  - "3306:3306" # specify port forwarding

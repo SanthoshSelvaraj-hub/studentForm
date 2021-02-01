@@ -1,0 +1,32 @@
+.box {
+    border: solid 1px black;
+    height: auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    position: relative;
+}
+
+.container {
+    width: 80% !important;
+}
+
+#submit {
+    margin: 30px 0 30px 30px;
+    /*top r b l */
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+.firstRow label {
+    display: block;
+    margin-top: 50px;
+}
+
+.rows label {
+    display: block;
+    margin-top: 20px;
+}

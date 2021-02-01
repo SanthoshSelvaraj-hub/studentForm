@@ -1,0 +1,126 @@
+
+<style>
+    
+    .box{
+    border: solid 1px black;
+    height: auto;
+    width: 70%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 50px;
+    position: relative;
+  }
+
+  #lblSignup{
+    font-weight: 600;
+    font-size: large;
+    display: table;
+    margin:0 auto;
+    margin-top: 15px;
+  }
+  
+  .center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #btnSignup{
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+    width: 70px;
+    margin: auto;
+    padding: 0.9%;
+    margin-top: 30px;
+    background-color: #5cb0e0;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 650;
+  }
+  #btnSignup:hover{
+    cursor: pointer;
+  }
+
+  .bord{
+    border: 1px solid black;
+  }
+
+  .signup label{
+    display: block;
+    margin-left: 40px;
+    margin-top:25px;
+    font-size: 1.4em;
+  }
+
+  .signup input{
+    margin-top:25px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .tb{
+      margin: 0 auto !important;
+    }  
+    .smallTag{
+      display: block;
+      text-align: center;
+    }
+  }
+
+  
+</style>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">MDS Assignment</a>
+</nav>
+
+<!--Sign up-->
+<div class="box">
+  <form (ngSubmit)="SignUpClick(SignUpForm)" #SignUpForm="ngForm">
+    <div class="container">
+      <span class="badge badge-pill badge-secondary" id="lblSignup">Sign Up Form</span>
+    </div>
+
+    <div class="container signup">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="txtEmail" style="display:block;margin-top: 45px;">Email</label>
+        </div>
+        <div class="col-md-9">
+          <input type="email" id="txtEmail" ngModel autocomplete="off"
+          #Email="ngModel" [class.is-invalid]="Email.invalid && Email.touched" required autofocus
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email"
+          style="margin-top: 45px;width: 80%;" class="form-control tb">
+          <div *ngIf="Email.errors">
+            <small class="text-danger smallTag" *ngIf="Email.errors.pattern">Invalid Email address</small>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="row">
+        <div class="col-md-3">
+          <label for="txtPassword">Password</label>
+        </div>
+        <div class="col-md-9">
+          <input type="password" id="txtPassword" ngModel #Password="ngModel" required
+           style="width: 80%;" name="password" class="form-control tb" [class.is-invalid]="Password.invalid && Password.touched">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <label for="txtCountry">Country</label>
+        </div>
+        <div class="col-md-9 tb">
+          <input type="text" id="txtCountry" ngModel name="country" required
+          style="width: 80%;"  class="form-control tb">
+        </div>
+      </div>
+
+    <div class="center">
+      <button type="submit"  [disabled]="!SignUpForm.form.valid" id="btnSignup">Sign Up</button>
+    </div>
+    </div>
+  </form>
+  </div>

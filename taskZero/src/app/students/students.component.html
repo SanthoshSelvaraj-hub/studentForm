@@ -1,0 +1,59 @@
+<style>
+    .heading
+    {
+        display: flex;
+        height: auto;
+        background-color: rgb(238, 245, 248);
+        overflow: hidden;
+        border: 1px solid black;
+    }
+    .data{
+        border: 1px solid black;
+        display:flex;
+        flex-direction: column;
+    }
+    .data label{
+        display: block;
+        margin-left: 35px;
+        margin-top:8px;
+    }
+    #refresh{
+        float: right;
+        margin-left: auto;
+        margin-right: 110px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #refresh{
+            margin-right: 30px;
+        }
+    }
+</style>
+
+<div class="box">
+    <div class="container">
+        <div class="row heading">
+            <div style="text-align: center;">
+                <h6><label style="margin-left: 50px;">Registered Students</label></h6>
+            </div>
+            
+                <button class="btn btn-secondary btn-sm" id="refresh" (click)="refreshClick()">
+                    Refresh</button>
+        </div>
+
+        <div style="width: 90%;margin:0 auto;margin-top: 30px;" *ngFor="let student of Students">
+            <div class="row heading">
+                <div style="text-align: center;">
+                    <label style="margin-left: 40px;font-size: 15px;">
+                         {{student.name}}</label>
+                </div>
+            </div>
+            <div class="row data">
+                <label><b>Email:</b> {{student.email}}</label>
+                <label><b>Address:</b> {{student.address}}</label>
+                <label><b>Student ID:</b> {{student.id}}</label>
+            </div>
+        </div>
+
+    </div>
+</div>
