@@ -37,7 +37,7 @@ export class FormComponent implements OnInit {
     const body = {"id":parseInt(this.student.StudentID),"name":this.student.FullName,
     "email":this.student.Email,"country":this.student.Country,"state":this.student.State,
   "city":this.student.City,"zip":parseInt(this.student.Zip),"password":this.student.Password} ;
-    this.http.post<any>('http://localhost:3000/api/student', body).subscribe({
+    this.http.post<any>('http://3.136.155.29:3000/api/student', body).subscribe({
       next: data => {
         console.log(data);
                 },

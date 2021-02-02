@@ -16,6 +16,16 @@ app.get("/api/students", async (req,res) => {
     res.json(results);
 })
 
+app.post("/api/grapesjs", async (req,res) =>{
+
+    console.log(req.body)
+    // const { id,name,email,city,state,country,zip,password } = req.body;
+    // const conn = await connection().catch(e => {});
+    // const result = await query(conn, "INSERT INTO `students` (id, email, name, password, country, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+    // [id, email, name, password, country, city, state, zip])
+    res.status(200).json({ message: 'ok' });
+})
+
 app.post("/api/student", async (req,res) =>{
 
     //console.log(req.body)

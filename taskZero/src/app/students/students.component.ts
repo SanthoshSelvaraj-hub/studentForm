@@ -20,7 +20,7 @@ export class StudentsComponent implements OnInit {
   public Students:StudentView[] = []
   refreshClick(){
     //pull data and update Students variable
-       this.http.get<any>('http://localhost:3000/api/students').subscribe({
+       this.http.get<any>('http://3.136.155.29:3000/api/students').subscribe({
         next: data => {
           this.Students = []
           data.forEach((s:any) => {
