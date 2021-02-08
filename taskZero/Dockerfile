@@ -6,4 +6,4 @@ RUN npm cache clean --force
 RUN npm install
 COPY . /usr/src/app
 EXPOSE 4200
-CMD ["start"]
+CMD ["npm", "start"]
